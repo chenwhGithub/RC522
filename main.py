@@ -6,6 +6,7 @@ import MFRC522
 import signal
 
 rc = MFRC522.MFRC522()
+# dataBlock0: save src card data, then write the saved date to des card
 dataBlock0 = [0xa5, 0xd1, 0x8b, 0xe1, 0x1e, 0x08, 0x04, 0x00, 0x01, 0x83, 0x7c, 0x58, 0x71, 0xe6, 0x2d, 0x1d]
 sectorkey = [0xff, 0xff, 0xff, 0xff, 0xff, 0xff]
 
@@ -64,7 +65,7 @@ def write_block0():
         return
     print("MFRC522_Select success")
 
-    status = rc.MFRC522_Halt()
+    status = rc.MFRC522_Halt() # will return error, but no need to care
     print("MFRC522_Halt %d" %status)
 
     status = rc.MFRC522_WriteCmd40()
