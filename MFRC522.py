@@ -1,3 +1,13 @@
+# RC522-pin     Pi-pin
+# 3.3V          1(3.3V)
+# RST           22(GPIO25)
+# GND           6(GND)
+# IRQ           none
+# MISO          21(GPIO9)
+# MOSI          19(GPIO10)
+# SCK           23(GPIO11)
+# SDA           24(GPIO8)
+
 import RPi.GPIO as GPIO
 import spi
 import signal
